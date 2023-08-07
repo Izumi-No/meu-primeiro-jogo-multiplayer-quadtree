@@ -6,10 +6,13 @@ import {
   WebSocketClient,
   WebSocketServer as Server,
 } from "https://deno.land/x/websocket@v0.1.4/mod.ts";
+import { config as load } from "https://deno.land/x/dotenv@v1.0.1/mod.ts";
 
-new HttpServer(8080);
+const env = load({});
+
+new HttpServer(Number(env.HTTP_PORT) || 8080);
 const game = new Game();
-const wsServer = new Server(8081);
+const wsServer = new Server(Number(env.WS_PORT) || 8081);
 
 game.start();
 

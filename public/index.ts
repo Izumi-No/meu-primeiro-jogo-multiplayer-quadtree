@@ -9,7 +9,9 @@ const keyboardListener = new KeyboardListener(document);
 let currentPlayerId: string = "";
 
 // WebSocket setup
-const ws = new WebSocket("ws://localhost:8081");
+const ws = new WebSocket(
+  `ws://${location.hostname}:${process.env.WS_PORT || 8081}`
+);
 
 ws.addEventListener("open", () => {
   console.log("connected to the server");
