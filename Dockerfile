@@ -1,4 +1,4 @@
-
+ARG DENO_VERSION=1.36.0
 # Use an Alpine-based Node.js image
 FROM node:18-alpine
 
