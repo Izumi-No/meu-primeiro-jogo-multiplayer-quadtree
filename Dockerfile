@@ -122,5 +122,8 @@ ENV DENO_INSTALL_ROOT /usr/local
 # Add Deno to the PATH
 ENV PATH /usr/local/bin:/deno-dir/bin:$PATH
 
+RUN yarn build
 
-CMD [ "yarn start" ]
+
+# deno run --allow-net --allow-env --allow-read server/index.ts
+CMD [ "deno", "run", "--allow-net", "--allow-env", "--allow-read", "server/index.ts" ]
