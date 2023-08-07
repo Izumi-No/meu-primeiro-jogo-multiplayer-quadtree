@@ -20,7 +20,7 @@ RUN curl -sL https://deb.nodesource.com/setup_17.x | bash - \
 WORKDIR /app
 
 # Copy your Node.js application files to the container
-COPY package.json package-lock.json /app/
+COPY package.json /app/
 
 # Install Node.js dependencies
 RUN npm install
