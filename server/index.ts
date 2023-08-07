@@ -9,9 +9,9 @@ import {
 
 const env = Deno.env.toObject();
 
-new HttpServer(Number(env.HTTP_PORT) || 8080);
+new HttpServer(Number(env.PORT) || 8080);
 const game = new Game();
-const wsServer = new Server(Number(env.WS_PORT) || 8081);
+const wsServer = new Server(Number(env.WEBSOCKET_PORT) || 8081);
 
 game.start();
 

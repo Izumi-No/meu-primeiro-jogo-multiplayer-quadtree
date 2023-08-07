@@ -10,7 +10,7 @@ let currentPlayerId: string = "";
 
 // WebSocket setup
 const ws = new WebSocket(
-  `ws://${location.hostname}:${process.env.WS_PORT || 8081}`
+  `ws://${location.hostname}:${process.env.WEBSOCKET_PORT || 8081}`
 );
 
 ws.addEventListener("open", () => {

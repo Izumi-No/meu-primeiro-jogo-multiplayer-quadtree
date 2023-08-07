@@ -113,13 +113,7 @@ RUN yarn
 # Copy your Deno application files to the container
 COPY . /app/
 
-# Expose the ports for Deno and Node.js (adjust if your applications use different ports)
-ARG http_port
-ENV HTTP_PORT $http_port
-
-ARG ws_port
-ENV WS_PORT $ws_port
-EXPOSE $http_port $ws_port
+EXPOSE $PORT $WEBSOCKET_PORT
 
 # Set Deno environment variables
 ENV DENO_DIR /deno-dir/
