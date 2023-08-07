@@ -17,13 +17,22 @@ ENV WS_PORT $ws_port
 # Set working directory
 WORKDIR /app
 
-# Install Deno
-RUN apk add --no-cache curl && \
-    curl -fsSL https://deno.land/x/install/install.sh | sh
 
-# Add Deno to the PATH
-ENV DENO_INSTALL="/root/.deno"
-ENV PATH="${DENO_INSTALL}/bin:${PATH}"
+RUN addgroup --gid 1000 deno \
+  && adduser --uid 1000 --disabled-password deno --ingroup deno \
+  && mkdir /deno-dir/ \
+  && chown deno:deno /deno-dir/
+
+RUN curl -fsSL https://github.com/denoland/deno/releases/download/v${DENO_VERSION}/deno-x86_64-unknown-linux-gnu.zip \
+    --output deno.zip \
+  && unzip deno.zip \
+  && rm deno.zip \
+  && chmod 755 deno
+
+ENV DENO_DIR /deno-dir/
+ENV DENO_INSTALL_ROOT /usr/local
+
+COPY --from=bin /deno /bin/deno
 
 # Copy your Node.js application files to the container
 COPY package.json /app/
