@@ -4,8 +4,8 @@ FROM denoland/deno:alpine-1.36.0
 
 ENV NODE_VERSION 18.17.0
 
-RUN addgroup -g 1000 node \
-    && adduser -u 1000 -G node -s /bin/sh -D node \
+RUN addgroup -g 1002 node \
+    && adduser -u 1002 -G node -s /bin/sh -D node \
     && apk add --no-cache \
         libstdc++ \
     && apk add --no-cache --virtual .build-deps \
