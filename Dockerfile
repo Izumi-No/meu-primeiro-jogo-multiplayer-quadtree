@@ -14,12 +14,6 @@ ARG ws_port
 ENV WS_PORT $ws_port
 
 
-
-
-
-
-
-
 # Set working directory
 WORKDIR /app
 
@@ -35,7 +29,7 @@ ENV PATH="${DENO_INSTALL}/bin:${PATH}"
 COPY package.json /app/
 
 # Install Node.js dependencies
-RUN npm install
+RUN yarn
 
 # Copy your Deno application files to the container
 COPY . /app/
@@ -44,4 +38,4 @@ COPY . /app/
 EXPOSE $http_port $ws_port
 
 # Start both Deno and Node.js applications using environment variables
-CMD npm start
+CMD yarn start
