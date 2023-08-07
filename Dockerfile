@@ -1,6 +1,12 @@
 # Use an Alpine-based Node.js image
 FROM denoland/deno:alpine-1.36.0
 
+# add SIZE_OF_GAME env:
+ENV SIZE_OF_GAME 10
+
+
+
+
 
 ENV NODE_VERSION 18.17.0
 
