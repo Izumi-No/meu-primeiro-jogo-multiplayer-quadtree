@@ -23,8 +23,7 @@ gamesize = Number(SIZE_OF_GAME || 100);
 console.log(`Game size: ${gamesize}`);
 
 //#else */
-import { config as load } from "https://deno.land/x/dotenv@v1.0.1/mod.ts";
-gamesize = Number(load({}).SIZE_OF_GAME || 1000);
+gamesize = Number(Deno.env.get("SIZE_OF_GAME") || 1000);
 
 console.log(`Game size: ${gamesize}`);
 

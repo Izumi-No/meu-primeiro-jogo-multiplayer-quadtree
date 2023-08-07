@@ -34,8 +34,8 @@ export default {
     }),
     replace({
       values: {
-        "process.env.SIZE_OF_GAME": process.env.SIZE_OF_GAME || undefined,
         "process.env.WS_PORT": process.env.WS_PORT || undefined,
+        "process.env.SIZE_OF_GAME": process.env.SIZE_OF_GAME || undefined,
       },
     }),
     jscc({ values: { _BROWSER: true } }),

@@ -31,6 +31,6 @@ export class HttpServer {
       console.log(evt.error);
     });
 
-    app.listen({ port });
+    app.listen({ hostname: "0.0.0.0", port });
   }
 }
