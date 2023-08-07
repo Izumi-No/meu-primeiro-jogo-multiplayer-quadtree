@@ -36,6 +36,7 @@ export default {
       values: {
         "process.env.WEBSOCKET_PORT": process.env.WS_PORT || undefined,
         "process.env.SIZE_OF_GAME": process.env.SIZE_OF_GAME || undefined,
+        "process.env.isProduction": production || false,
       },
     }),
     jscc({ values: { _BROWSER: true } }),

@@ -17,7 +17,8 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "build-dev": "rollup -c -w",
     "start": "yarn build && deno run --allow-net --allow-env --allow-read server/index.ts",
-    "dev": "yarn build && env $(cat .env.dev | grep -v \"#\" | xargs)  deno run -A server/index.ts "
+    "dev": "yarn build & env $(cat .env.dev | grep -v \"#\" | xargs)  deno run -A server/index.ts "
   }
 }
