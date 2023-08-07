@@ -34,7 +34,7 @@ export default {
     }),
     replace({
       values: {
-        "process.env.WS_PORT": process.env.WS_PORT || undefined,
+        "process.env.WEBSOCKET_PORT": process.env.WS_PORT || undefined,
         "process.env.SIZE_OF_GAME": process.env.SIZE_OF_GAME || undefined,
       },
     }),
