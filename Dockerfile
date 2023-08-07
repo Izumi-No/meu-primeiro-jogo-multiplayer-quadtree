@@ -15,7 +15,7 @@ RUN apk add --no-cache curl unzip \
 WORKDIR /app
 
 # Copy your Node.js application files to the container
-COPY package.json yarn.lock /app/
+COPY package.json/app/
 
 # Install Node.js dependencies
 RUN yarn
