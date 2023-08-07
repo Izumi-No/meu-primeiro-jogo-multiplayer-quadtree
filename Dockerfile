@@ -15,7 +15,7 @@ RUN apk add --no-cache curl unzip \
 WORKDIR /app
 
 # Copy your Node.js application files to the container
-COPY package.json /app/
+COPY package.json yarn.lock /app/
 
 # Install Node.js dependencies
 RUN yarn
@@ -31,5 +31,11 @@ ARG ws_port
 ENV WS_PORT $ws_port
 EXPOSE $http_port $ws_port
 
-# Start both Deno and Node.js applications using environment variables
+# Set Deno environment variables
+ENV DENO_DIR /deno-dir/
+ENV DENO_INSTALL_ROOT /usr/local
+
+# Add Deno to the PATH
+ENV PATH /usr/local/bin:/deno-dir/bin:$PATH
+
 CMD yarn start
