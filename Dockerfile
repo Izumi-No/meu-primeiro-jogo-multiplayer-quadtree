@@ -128,4 +128,4 @@ ENV DENO_INSTALL_ROOT /usr/local
 # Add Deno to the PATH
 ENV PATH /usr/local/bin:/deno-dir/bin:$PATH
 
-CMD yarn start
+ENTRYPOINT ["yarn", "start"]
