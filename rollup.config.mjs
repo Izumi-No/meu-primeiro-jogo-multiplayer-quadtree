@@ -8,7 +8,8 @@ import resolve from "@rollup/plugin-node-resolve";
 import { swc } from "rollup-plugin-swc3";
 import jscc from "rollup-plugin-jscc";
 
-const production = !process.env.ROLLUP_WATCH;
+const production =
+  !process.env.ROLLUP_WATCH || process.env.NODE_ENV === "production";
 
 export default {
   input: "public/index.ts",
@@ -36,7 +37,7 @@ export default {
       values: {
         "process.env.WEBSOCKET_PORT": process.env.WS_PORT || undefined,
         "process.env.SIZE_OF_GAME": process.env.SIZE_OF_GAME || undefined,
-        "process.env.isProduction": production || false,
+        "process.env.isProduction": production,
       },
     }),
     jscc({ values: { _BROWSER: true } }),

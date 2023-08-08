@@ -10,8 +10,10 @@ let currentPlayerId: string = "";
 
 // WebSocket setup
 const ws = new WebSocket(
-  `${process.env.isProduction? "wss": "ws"}://${location.hostname}:${process.env.WEBSOCKET_PORT || 8081}`
+  `${location.protocol === "https:" ? "wss" : "ws"}://${location.host}/wss`
 );
+
+console.log(location);
 
 ws.addEventListener("open", () => {
   console.log("connected to the server");
