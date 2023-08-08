@@ -11,7 +11,6 @@ Este é um projeto de jogo multijogador construído usando comunicação por Web
 - [Jogabilidade](#jogabilidade)
 - [Customização](#customização)
 - [Contribuição](#contribuição)
-- [Licença](#licença)
 
 ## Recursos
 
@@ -33,8 +32,8 @@ Este é um projeto de jogo multijogador construído usando comunicação por Web
 2. Instale as dependências do projeto:
 
    ```bash
-   cd jogo-multijogador
-   npm install
+   cd meu-primeiro-jogo-multiplayer-quadtree
+   yarn
    ```
 
 ### Executando o Servidor
@@ -42,7 +41,7 @@ Este é um projeto de jogo multijogador construído usando comunicação por Web
 1. Inicie o servidor com o seguinte comando:
 
    ```bash
-   npm start
+   yarn start
    ```
 
 2. Abra o seu navegador e acesse [http://localhost:8080](http://localhost:8080) para jogar o jogo.
