@@ -18,7 +18,7 @@ export default {
     file: "dist/bundle.js",
     format: "iife",
 
-    entryFileNames: "bundle.[hash].js",
+    entryFileNames: "/bundle.[hash].js",
     chunkFileNames: "chunk.[hash].js",
   },
   plugins: [
